@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script>
+        function addListItem() {
+            let newElem = document.createElement("li");
+            newElem.textContent
+            newElem.textContent = document.getElementById("task").value;
+            let myUList = document.getElementById("taskList");
+            myUList.append(newElem);
+        }
+    </script>
+</head>
+
+<body>
+    <h1>To Do List</h1>
+    Task
+
+    <div>
+        <ul id="taskList">
+
+        </ul>
+    </div>
+
+
+
+    <input type="text" id="task">
+
+    <button name="" id="" class="btn btn-primary" type="button" onclick="addListItem()">
+        Add task
+    </button>
+</body>
+
+</html>
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Welcome to my Weather</h1>
+    <button name="" id="" class="btn btn-primary" type="button" onclick="addListItem()"></button>
+</body>
+
+</html> -->

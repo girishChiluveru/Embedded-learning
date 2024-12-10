@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <script src="js/bootstrap.bundle.min.js"></script>
+</head>
+<body><br>
+    
+    Welcome to my weather
+    City
+    <br><br>
+    
+    <input type="text" name="" id="mycity">
+    <button class="btn btn-primary" id="submit-btn">Get Weather</button>
+    <div id="weather">
+        <p>temp </p> <p id="temp"></p>
+         <p>temp_min</p><p id="temp_min"></p>
+    <p>temp_max</p>
+    <p id="temp_max"></p>
+    <p class="desp"></p>
+    </div>
+</body>
+</html>
+<script>
+    let div=document.querySelector('div');
+    let p4=document.querySelector('.desp');
+    let url="http://10.10.9.128:3000/weather/";
+    let inp = document.getElementById("mycity");
+    let mybtn=document.querySelector("#submit-btn");
+    let p1=document.querySelector("#temp");
+    let p2=document.querySelector("#temp_min");
+    let p3=document.querySelector("#temp_max");
+        mybtn.addEventListener("click", async function() {
+            url=url+''+inp.value;
+           
+            console.log(url);
+            await getWeather(url);
+    });
+    async function getWeather(url){
+        try{
+        response = await fetch(url);
+        doc=await response.json();
+        console.log(doc.main);
+        let data=doc.main;
+        p1.textContent=data.temp;
+        p2.textContent=data.temp_min;
+        p3.textContent=data.temp_max;
+       p4.textContent=doc.weather.description;
+        }
+        catch(err){
+            console.log(err);
+        }
+    }
+</script>
